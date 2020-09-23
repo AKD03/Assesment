@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>      
     <script>
-        function gadgets(){
+        var gadgets=()=>{
             var name = document.getElementById("myList").value;
             if(name == "Laptop")
             {
@@ -31,7 +31,7 @@
         <div>
  Enter Your Choice <select name="list" id="myList" onchange="gadgets()">
         <option selected="" value="Default">--Select--</option>
-        <option value="Laptop">Laptop/option>
+        <option value="Laptop">Laptop</option>
         <option value="TV">TV</option>
         <option value="Mobile">Mobile</option>
       
