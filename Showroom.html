@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>      
+    <script>
+        function gadgets(){
+            var name = document.getElementById("myList").value;
+            if(name == "Laptop")
+            {
+                var countryName = ['Mac','HP','Lenovo'];
+                document.getElementById("display").innerHTML = countryName.join("<br>");
+            }
+            else if(name == "TV")
+            {
+                var countryName = ['LG','Samsung','Sony'];
+                document.getElementById("display").innerHTML = countryName.join("<br>");
+            }
+            else if(name == "Mobile")
+            {
+                var countryName = ['Apple','OnePlus','Pixel'];
+                document.getElementById("display").innerHTML = countryName.join("<br>");
+            }
+        
+            
+        }
+    </script>
+</head>
+<body>   
+        <div>
+ Enter Your Choice <select name="list" id="myList" onchange="gadgets()">
+        <option selected="" value="Default">--Select--</option>
+        <option value="Laptop">Laptop/option>
+        <option value="TV">TV</option>
+        <option value="Mobile">Mobile</option>
+      
+    </select>
+    
+</div>
+<br>
+<div> <span id="display"></span></div>
+</body>
+</html>

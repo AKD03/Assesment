@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script>
+        function validate(){
+            var name=document.getElementById('name').value;
+            var password=document.getElementById('password').value;
+            var email=document.getElementById('email').value;
+            var phone=document.getElementById('phone').value;
+
+            var nameList=['Abhay','Rohan','Rahul'];
+            
+            var nameLength=name.length;
+            var passwordLength=password.length;
+            var phoneLength=phone.length;
+            var letters = /^[A-Za-z]+$/;
+
+            var pattern=/^(((?=.[a-z])(?=.[A-Z]))|((?=.[a-z])(?=.[0-9]))|((?=.[A-Z])(?=.[0-9])))(?=.{6,})/;
+
+            if(!(name.match(letters)) || nameLength<5 || nameLength>15)
+            {
+                alert("Name cannot be null or number or less than 3 or greater than 15");
+                document.getElementById('name').focus();
+            }
+            else if (password ==""||password.length<5){
+		alert("enter valid password");
+		document.myform.pass.value="";
+		
+    }
+    else if (!password.match(/[1-9]/)){
+		alert("your password doesn't has a number");
+		document.myform.pass.value="";
+		
+    }
+    else if (!password.match(/[A-Z]/)){
+		alert("your password  doesn't has a uppercase");
+		document.myform.pass.value="";
+		
+    }
+    else if (!password.match(/[a-z]/)){
+		alert("your password  doesn't has a lowercase");
+		document.myform.pass.value="";
+		
+    }
+    else if (!password.match(/[!@#$%^&*]/)){
+		alert("your password  doesn't has a special character");
+		document.myform.pass.value="";
+		
+        }
+            else if(isNaN(phone) || phoneLength!=10 )
+            {
+                alert("Phone number cannot be null or string and should be 10 digits");
+                document.getElementById('phone').focus();
+            }
+         
+            else if(nameList.indexOf(name) !== -1 )
+            {
+                alert('user name exists');
+                document.getElementById('name').focus();
+            }
+            
+            else
+            {
+                alert('User Registered');
+                document.getElementById("print").innerHTML="Registation Done Successfully!";
+                document.getElementById("print").innerHTML="Welcome  " +name ;
+            }
+            
+        }
+           
+            
+    </script>
+</head>
+<body>
+    <form  id="myform" >
+        User Name:<input type="text" id="name"><br>  <br>      
+        Password:<input type="password" id="password"><br> <br>
+        E-mail:<input type="email" id="email" required><br> <br>
+        Phone Number:<input type="text" id="phone"><br> <br>
+        <input type="button" value="register" onclick="validate();" >
+
+    </form>
+</body>
+<div id="print"></div>
+</html>
